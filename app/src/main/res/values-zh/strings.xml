@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">只是Java</string>
+    <string name="chocolate">巧克力</string>
+    <string name="initial_quantity_value">2</string>
+    <string name="name">姓名</string>
+    <string name="order_summary_chocolate">是否加巧克力? <xliff:g example="true" id="addChocolate">%b</xliff:g></string>
+    <string name="order_summary_email_subject"><xliff:g example="Amy" id="name">%s</xliff:g>的\"只是Java\"點餐單</string>
+    <string name="order_summary_name">姓名: <xliff:g example="Amy" id="name">%s</xliff:g></string>
+    <string name="order_summary_price">總金額: <xliff:g example="$10" id="price">%s</xliff:g></string>
+    <string name="order_summary_quantity">數量: <xliff:g example="2" id="quantity">%d</xliff:g></string>
+    <string name="order_summary_whipped_cream">是否加生奶油? <xliff:g example="true" id="addWhippedCream">%b</xliff:g></string>
+    <string name="quantity">數量</string>
+    <string name="thank_you">感謝您!</string>
+    <string name="order">點餐</string>
+    <string name="toppings">配料</string>
+    <string name="whipped_cream">生奶油</string>
+</resources>
