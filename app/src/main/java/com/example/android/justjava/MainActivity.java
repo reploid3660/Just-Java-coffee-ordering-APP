@@ -1,7 +1,7 @@
 /**
  * Add your package below. Package name can be found in the project's AndroidManifest.xml file.
  * This is the package name our example uses:
- *
+ * <p>
  * package com.example.android.justjava;
  */
 
@@ -32,36 +32,40 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
     /**
-        *Check if the user wants whipped cream added to the coffee
+     * Check if the user wants whipped cream added to the coffee
+     *
      * @return the user want whipped cream or not
      **/
-    private boolean whippedCreamChecked()
-    {
+    private boolean whippedCreamChecked() {
         CheckBox checkBox = (CheckBox) findViewById(R.id.whipped_cream_check_box);
         return checkBox.isChecked();
     }
+
     /**
-     *Check if the user wants chocolate added to the coffee
+     * Check if the user wants chocolate added to the coffee
+     *
      * @return the user want chocolate or not
      **/
-    private boolean chocolateChecked()
-    {
+    private boolean chocolateChecked() {
         CheckBox checkBox = (CheckBox) findViewById(R.id.chocolate_check_box);
         return checkBox.isChecked();
     }
+
     /**
-        *See the name tha the users type in
-        *@return the name of the user
+     * See the name tha the users type in
+     *
+     * @return the name of the user
      **/
-    private String name()
-    {
+    private String name() {
         EditText editText = (EditText) findViewById(R.id.name);
         return editText.getText().toString();
     }
+
     /**
-        * This method is called when the order button is clicked.
-        */
+     * This method is called when the order button is clicked.
+     */
     public void submitOrder(View view) {
         /*displayMessage(createOrderSummary(calculatePrice()))*/
         Intent intent = new Intent(Intent.ACTION_SENDTO);
@@ -74,18 +78,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-        * Calculates the price of the order.
-        *@return price the total prices of the coffee
-        */
-    private int calculatePrice()
-    {
+     * Calculates the price of the order.
+     *
+     * @return price the total prices of the coffee
+     */
+    private int calculatePrice() {
         int basePrice = 5;
-        if (whippedCreamChecked())
-        {
+        if (whippedCreamChecked()) {
             basePrice = basePrice + 1;
         }
-        if (chocolateChecked())
-        {
+        if (chocolateChecked()) {
             basePrice = basePrice + 2;
         }
         int price = quantity * basePrice;
@@ -93,12 +95,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-        *
-        * @param priceOfOrder tje total price of the coffee
-        * @return a list of all the information
-        */
-    private String createOrderSummary(int priceOfOrder)
-    {
+     * @param priceOfOrder tje total price of the coffee
+     * @return a list of all the information
+     */
+    private String createOrderSummary(int priceOfOrder) {
         String nameString = getString(R.string.order_summary_name, name()) + "\n";
         String cream = getString(R.string.order_summary_whipped_cream, whippedCreamChecked()) + "\n";
         String chocolate = getString(R.string.order_summary_chocolate, chocolateChecked()) + "\n";
@@ -115,9 +115,7 @@ public class MainActivity extends AppCompatActivity {
         //100 cups of coffee is the upper limit per user
         if (quantity < 100) {
             quantity = quantity + 1;
-        }
-        else if (quantity == 100)
-        {
+        } else if (quantity == 100) {
             Context context = getApplicationContext();
             CharSequence text = "That's too much for us!";
             int duration = Toast.LENGTH_SHORT;
@@ -135,9 +133,7 @@ public class MainActivity extends AppCompatActivity {
         //1 cup of coffee is the lower limit per user
         if (quantity > 1) {
             quantity = quantity - 1;
-        }
-        else if (quantity == 1)
-        {
+        } else if (quantity == 1) {
             Context context = getApplicationContext();
             CharSequence text = "At least order 1 cup please!";
             int duration = Toast.LENGTH_SHORT;
@@ -147,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         }
         displayQuantity(quantity);
     }
+
     /**
      * This method displays the given quantity value on the screen.
      */
